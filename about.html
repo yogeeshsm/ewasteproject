@@ -3,47 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Understand what e-waste is, why it’s a problem, and its impact on the world.">
+    <meta name="description" content="Understand what e-waste is, why it's a problem, and its impact on the world.">
     <meta name="keywords" content="e-waste definition, electronic waste, environmental impact">
     <title>About E-Waste | The Growing Crisis of E-Waste</title>
-    <link rel="stylesheet" href="about.css">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header and Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0 20px;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 0;
+            gap: 10px;
+        }
+
+        nav ul li {
+            margin: 5px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: block;
+            white-space: nowrap;
+            font-size: clamp(0.8rem, 2vw, 1rem);
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Main content container */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Page header section */
+        .page-header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: clamp(30px, 5vw, 60px);
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Content section */
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: clamp(30px, 5vw, 50px);
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            font-size: clamp(1.3rem, 4vw, 2rem);
+            margin-bottom: 20px;
+            color: #333;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .content p {
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            margin-bottom: 25px;
+            color: #555;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        /* Call to action section */
+        .call-to-action {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: clamp(30px, 5vw, 40px);
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn:hover,
+        .btn:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: clamp(0.85rem, 2vw, 1rem);
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            header {
+                padding: 0 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 5px;
+                padding: 10px 0;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                padding: 12px 20px;
+                margin: 2px 0;
+                border-radius: 15px;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            .content p {
+                text-align: left;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            header {
+                padding: 0 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            .page-header,
+            .content,
+            .call-to-action {
+                margin-bottom: 20px;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+        }
+
+        /* Large screens */
+        @media (min-width: 1200px) {
+            nav ul {
+                justify-content: space-between;
+                flex-wrap: nowrap;
+            }
+
+            nav ul li a {
+                padding: 12px 20px;
+            }
+        }
+
+        /* Tablet landscape */
+        @media (max-width: 1024px) and (orientation: landscape) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        a:focus,
+        .btn:focus {
+            outline: 3px solid rgba(102, 126, 234, 0.5);
+            outline-offset: 2px;
+        }
+
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="http://127.0.0.1:5500/home.html">Home</a></li>
-                <li><a href="http://127.0.0.1:5500/about.html">About E-Waste</a></li>
-                <li><a href="http://127.0.0.1:5500/cause.html">Causes</a></li>
-                <li><a href="http://127.0.0.1:5500/effects.html">Effects</a></li>
-                <li><a href="http://127.0.0.1:5500/solution.html">Solutions</a></li>
-                <li><a href="http://127.0.0.1:5500/resource.html">Resources</a></li>
-                <li><a href="http://127.0.0.1:5500/contact.html">Contact</a></li>
-                <li><a href="http://127.0.0.1:5500/feature.html">features</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About E-Waste</a></li>
+                <li><a href="#causes">Causes</a></li>
+                <li><a href="#effects">Effects</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#features">Features</a></li>
             </ul>
         </nav>
     </header>
+    
     <main>
         <section class="page-header">
             <h1>About E-Waste</h1>
             <p>What it is and why it matters.</p>
         </section>
+        
         <section class="content">
             <h2>What is E-Waste?</h2>
             <p>E-waste, or electronic waste, refers to discarded electrical or electronic devices. This includes everything from old smartphones and laptops to refrigerators and televisions. As technology advances, devices become obsolete faster, leading to a massive increase in e-waste worldwide.</p>
             
             <h2>Why is E-Waste a Growing Crisis?</h2>
-            <p>The rapid pace of innovation means we’re replacing gadgets more often. Many of these devices end up in landfills instead of being recycled, releasing toxic substances like lead, mercury, and cadmium into the environment. Only a small fraction of e-waste is properly managed, making it a pressing global issue.</p>
+            <p>The rapid pace of innovation means we're replacing gadgets more often. Many of these devices end up in landfills instead of being recycled, releasing toxic substances like lead, mercury, and cadmium into the environment. Only a small fraction of e-waste is properly managed, making it a pressing global issue.</p>
             
             <h2>Why Should You Care?</h2>
             <p>E-waste affects everyone. It pollutes soil and water, harms wildlife, and poses health risks to communities near disposal sites. By understanding e-waste, we can take steps to reduce its impact and build a more sustainable future.</p>
         </section>
+        
         <section class="call-to-action">
-            <a href="http://127.0.0.1:5500/cause.html" class="btn">Explore the Causes</a>
+            <a href="#causes" class="btn">Explore the Causes</a>
         </section>
     </main>
+    
     <footer>
-        <p>© 2023 The Growing Crisis of E-Waste</p>
+        <p>© 2024 The Growing Crisis of E-Waste</p>
     </footer>
 </body>
 </html>
